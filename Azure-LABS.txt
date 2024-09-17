@@ -1,0 +1,79 @@
+Schritt 1: Erstellen einer Richtlinie für Bedingten Zugriff
+
+Anmelden im Azure-Portal:
+
+Gehe zu portal.azure.com und melde dich mit deinem Administratorkonto an.
+
+Navigieren zu Azure Active Directory:
+
+Klicke im linken Navigationsbereich auf Azure Active Directory.
+
+Bedingten Zugriff konfigurieren:
+
+Gehe zu Sicherheit und dann zu Bedingter Zugriff.
+Klicke auf + Neue Richtlinie.
+Gib der Richtlinie einen Namen, z. B. MFA für Admins.
+
+Benutzer und Gruppen auswählen:
+
+Wähle Benutzer und Gruppen und dann Verzeichnisrollen.
+Wähle die Rolle Administrator aus.
+
+Cloud-Apps oder Aktionen auswählen:
+
+Wähle Ausgewählte Apps und füge die App Microsoft Azure Management hinzu.
+
+Bedingungen konfigurieren:
+
+Füge Bedingungen wie Standort und Client-Apps hinzu, um die Richtlinie nur auf spezifische Szenarien anzuwenden.
+
+Zugriffssteuerung konfigurieren:
+
+Wähle Grant und setze das Häkchen bei MFA erforderlich.
+Klicke auf Auswählen und dann auf Erstellen.
+Schritt 2: Erstellen einer benutzerdefinierten Rolle
+
+Benutzerdefinierte Rollen konfigurieren:
+
+Gehe zu Azure Active Directory > Rollen und Administratoren.
+Klicke auf + Neue benutzerdefinierte Rolle.
+Gib der Rolle einen Namen, z. B. App Manager, und eine Beschreibung.
+
+Berechtigungen hinzufügen:
+
+Wähle Berechtigungen hinzufügen und füge spezifische Berechtigungen hinzu, z. B. Microsoft.Directory/applications/allProperties/read und Microsoft.Directory/applications/create.
+
+Rolle erstellen:
+
+Klicke auf Erstellen.
+
+Rolle zuweisen:
+
+Gehe zu Rollen zuweisen und wähle + Zuweisung hinzufügen.
+Wähle die neu erstellte Rolle App Manager und füge einen Benutzer oder eine Gruppe hinzu.
+Schritt 3: Integration einer Anwendung in Azure Active Directory
+
+Registrierung einer neuen Anwendung:
+
+Gehe zu Azure Active Directory > App-Registrierungen.
+Klicke auf + Neue Registrierung.
+Gib der Anwendung einen Namen, z. B. My Custom App.
+Wähle die unterstützten Kontotypen aus (z. B. Konten in diesem Organisationsverzeichnis).
+
+Umleitungs-URI konfigurieren:
+
+Gib die Umleitungs-URI ein (z. B. https://myapp.com/auth).
+
+API-Berechtigungen konfigurieren:
+
+Gehe zu API-Berechtigungen und füge die erforderlichen Berechtigungen hinzu (z. B. Microsoft Graph > Benutzer.Read).
+
+Client-Geheimnis erstellen:
+
+Gehe zu Zertifikate und Geheimnisse und klicke auf + Neuer Client-Geheimnis.
+Gib eine Beschreibung und eine Ablaufzeit ein und klicke auf Hinzufügen.
+Kopiere den geheimen Schlüsselwert und speichere ihn sicher.
+
+Konfiguration in der Anwendung:
+
+Konfiguriere deine Anwendung, um den Client-ID und den geheimen Schlüssel zu verwenden, um sich bei Azure AD zu authentifizieren.
