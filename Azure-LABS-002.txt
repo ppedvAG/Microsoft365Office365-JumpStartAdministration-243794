@@ -1,0 +1,40 @@
+Schritt 1: Einrichten von Identitätsschutzrichtlinien
+
+Navigieren zu Identitätsschutz:
+
+Gehe zu Identitätsschutz im Menü.
+
+Risikobasierte Richtlinie für Benutzeranmeldungen konfigurieren:
+
+Wähle Richtlinie für risikobasierte Anmeldungen.
+Klicke auf Benutzer und Gruppen und wähle eine Gruppe oder Benutzer aus.
+Setze Zugriffskontrolle auf Zugriff blockieren oder MFA erforderlich.
+Klicke auf Richtlinie erstellen.
+
+Risikobasierte Richtlinie für riskante Benutzer konfigurieren:
+
+Wähle Richtlinie für riskante Benutzer.
+Wähle die Benutzer oder Gruppen aus, auf die die Richtlinie angewendet werden soll.
+Setze Zugriffskontrolle auf Kennwort zurücksetzen.
+Klicke auf Richtlinie erstellen.
+
+Schritt 2: Einrichten von dynamischen Gruppen
+
+Erstellen einer dynamischen Gruppe:
+
+Gehe zu Gruppen im Azure AD-Menü.
+Klicke auf + Neue Gruppe.
+Wähle den Gruppentyp Sicherheitsgruppe und setze Mitgliedschaftstyp auf Dynamisch.
+
+Definieren der dynamischen Mitgliedschaftsregeln:
+
+Klicke auf Erweiterte Regeln, um die Regeln für die dynamische Mitgliedschaft zu erstellen.
+
+Beispielsweise kann eine Regel alle Benutzer mit einer bestimmten Abteilung oder Rolle umfassen:
+
+(user.department -eq "Vertrieb") oder (user.jobTitle -eq "Manager")
+Klicke auf Speichern.
+
+Überprüfen der dynamischen Gruppe:
+
+Nachdem die Gruppe erstellt wurde, überprüfe die Mitgliederliste, um sicherzustellen, dass die korrekten Benutzer eingeschlossen sind.
