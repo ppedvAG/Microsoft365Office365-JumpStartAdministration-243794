@@ -1,0 +1,48 @@
+
+1. Erstellen und Verwalten einer Microsoft 365 Gruppe
+
+Schritt 1: Erstellen einer Gruppe im M365 Admin Center
+Gehe zu Microsoft 365 Admin Center.
+Melde dich mit deinem Admin-Konto an.
+Navigiere zu Teams & Gruppen > Aktive Gruppen.
+Klicke auf Gruppe hinzufügen.
+Wähle den Gruppentyp Microsoft 365 aus (damit erhält die Gruppe Funktionen wie SharePoint, Teams und Kalender).
+Gib der Gruppe den Namen Feuerlöscher und füge eine Beschreibung hinzu.
+Füge mindestens 5 Mitglieder hinzu, die zu diesem Team gehören.
+
+Schritt 2: Freigegebenes Postfach hinzufügen
+Gehe zu Teams & Gruppen > Freigegebene Postfächer.
+Klicke auf Postfach hinzufügen.
+Gib den Namen Feuerlöscher ein und weise dem Postfach dieselben Mitglieder zu, die zur Gruppe gehören.
+Stelle sicher, dass die Mitglieder Vollzugriff und Senden als Berechtigungen haben.
+
+Ergebnis:
+Die Gruppe Feuerlöscher ist jetzt erstellt und die Teammitglieder haben Zugriff auf die Gruppenressourcen und das freigegebene Postfach.
+
+
+2. Zuweisung von Sicherheitsrollen
+
+Schritt 1: Sicherheitsrollen zuweisen
+Gehe im M365 Admin Center zu Rollen > Admin-Rollen.
+Wähle die Rolle Compliance-Administrator aus.
+Klicke auf Rollen zuweisen, wähle ein Gruppenmitglied aus und klicke auf Speichern.
+Wiederhole den Vorgang für die Rolle Teams-Administrator, um einem anderen Mitglied diese Rolle zuzuweisen.
+
+
+3. Conditional Access Policies einrichten (Entra ID)
+
+Schritt 1: Zugriff auf das Entra ID-Portal
+Gehe zu Entra ID Portal.
+Melde dich mit deinem Admin-Konto an.
+Wähle im linken Menü Entra ID aus.
+
+Schritt 2: Erstellen einer Conditional Access Policy
+Wähle Sicherheit > Conditional Access im Entra ID Dashboard.
+Klicke auf Neue Richtlinie erstellen.
+Benenne die Richtlinie, z. B. Feuerlöscher-Zugriffsrichtlinie.
+Unter Benutzer wähle Benutzer und Gruppen und suche nach der Gruppe Feuerlöscher.
+Unter Zugriffskontrollen wähle Zugriff blockieren für unsichere Geräte (oder bedinge den Zugriff z. B. auf MFA).
+Unter Bedingungen kannst du Bedingungen wie Standort, Anwendungsplattform oder Risiko hinzufügen.
+
+Ergebnis:
+Die Conditional Access Policy schützt die Gruppe Feuerlöscher vor unsicheren Zugriffsversuchen.
